@@ -1,95 +1,98 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Lost in Translation</title>
-    <link rel="stylesheet" href="../style.css">
-</head>
+    <link rel="stylesheet" href="../style.css" />
+  </head>
 
-<body>
-    <h1 style="text-align: center">
-        The Past Dictates Our Future
-    </h1>
-    <p style="text-align: center;">
-        I met a traveller from an antique land,<br>
-        Who said—“Two vast and trunkless legs of stone<br>
-        Stand in the desert. . . . Near them, on the sand,<br>
-        Half sunk a shattered visage lies, whose frown,<br>
-        And wrinkled lip, and sneer of cold command,<br>
-        Tell that its sculptor well those passions read<br>
-        Which yet survive, stamped on these lifeless things,<br>
-        The hand that mocked them, and the heart that fed;<br>
-        And on the pedestal, these words appear:<br>
-        My name is Ozymandias, King of Kings;<br>
-        Look on my Works, ye Mighty, and despair!<br>
-        Nothing beside remains. Round the decay<br>
-        Of that colossal Wreck, boundless and bare<br>
-        The lone and level sands stretch far away."<br>
+  <body>
+    <h1 style="text-align: center">The Past Dictates Our Future</h1>
+    <p style="text-align: center">
+      I met a traveller from an antique land,<br />
+      Who said—“Two vast and trunkless legs of stone<br />
+      Stand in the desert. . . . Near them, on the sand,<br />
+      Half sunk a shattered visage lies, whose frown,<br />
+      And wrinkled lip, and sneer of cold command,<br />
+      Tell that its sculptor well those passions read<br />
+      Which yet survive, stamped on these lifeless things,<br />
+      The hand that mocked them, and the heart that fed;<br />
+      And on the pedestal, these words appear:<br />
+      My name is Ozymandias, King of Kings;<br />
+      Look on my Works, ye Mighty, and despair!<br />
+      Nothing beside remains. Round the decay<br />
+      Of that colossal Wreck, boundless and bare<br />
+      The lone and level sands stretch far away."<br />
     </p>
-    <br>
+    <br />
 
-    <div style="text-align: center;">
-        <input type="text" id="guess" name="guess" maxlength="20">
-        <button type="submit" onclick="display()"> ? </button>
+    <div style="text-align: center">
+      <input type="text" id="guess" name="guess" maxlength="20" />
+      <button type="submit" onclick="display()">?</button>
     </div>
 
-    <p id="output" , style="text-align: center">
-
-    </p>
+    <p id="output" , style="text-align: center"></p>
     <script>
-        const map1 = new Map();
-        map1.set('o', 'f');
-        map1.set('z', 'a');
-        map1.set('y', 'l');
-        map1.set('m', 's');
-        map1.set('a', 'e');
-        map1.set('n', 't');
-        map1.set('d', 'o');
-        map1.set('i', 'k');
-        map1.set('s', 'n');
-        map1.set('b', 'g');
-        map1.set('c', 'd');
-        map1.set('e', 'h');
-        map1.set('f', 'b');
-        map1.set('g', 'i');
-        map1.set('h', 'c');
-        map1.set('j', 'm');
-        map1.set('k', 'p');
-        map1.set('l', 'j');
-        map1.set('x', 'q');
-        map1.set('u', 'z');
-        map1.set('p', 'w');
-        map1.set('r', 'y');
-        map1.set('v', 'r');
-        map1.set('q', 'v');
-        map1.set('t', 'x');
-        map1.set('w', 'u');
-        map1.set(' ', '');
-        map1.set(',', "");
-        map1.set('.', '');
-        map1.set('"', '');
-        map1.set('—', '');
-        map1.set(';', '');
-        map1.set('!', '');
+      const input = document.querySelector("#guess");
+      const map1 = new Map();
+      map1.set("o", "f");
+      map1.set("z", "a");
+      map1.set("y", "l");
+      map1.set("m", "s");
+      map1.set("a", "e");
+      map1.set("n", "t");
+      map1.set("d", "o");
+      map1.set("i", "k");
+      map1.set("s", "n");
+      map1.set("b", "g");
+      map1.set("c", "d");
+      map1.set("e", "h");
+      map1.set("f", "b");
+      map1.set("g", "i");
+      map1.set("h", "c");
+      map1.set("j", "m");
+      map1.set("k", "p");
+      map1.set("l", "j");
+      map1.set("x", "q");
+      map1.set("u", "z");
+      map1.set("p", "w");
+      map1.set("r", "y");
+      map1.set("v", "r");
+      map1.set("q", "v");
+      map1.set("t", "x");
+      map1.set("w", "u");
+      map1.set(" ", "");
+      map1.set(",", "");
+      map1.set(".", "");
+      map1.set('"', "");
+      map1.set("—", "");
+      map1.set(";", "");
+      map1.set("!", "");
 
-        function display(e) {
-            const input = document.querySelector('#guess');
-            const log = document.getElementById('output');
-            var guessarr = Array.from(input.value);
-            for (let i = 0; i < guessarr.length; i++) {
-                guessarr[i] = map1.get(guessarr[i].toLowerCase());
-            }
-            var str = "";
-            for (let i = 0; i < guessarr.length; i++) {
-                str = str + guessarr[i];
-            }
+      input.addEventListener("keyup", enterKeySubmit);
 
-            log.innerHTML = str;
+      function enterKeySubmit(event) {
+        if (event.keyCode === 13) {
+          event.preventDefault();
+          display();
         }
-    </script>
-</body>
+      }
 
+      function display() {
+        const log = document.getElementById("output");
+        var guessarr = Array.from(input.value);
+        for (let i = 0; i < guessarr.length; i++) {
+          guessarr[i] = map1.get(guessarr[i].toLowerCase());
+        }
+        var str = "";
+        for (let i = 0; i < guessarr.length; i++) {
+          str = str + guessarr[i];
+        }
+
+        log.innerHTML = str;
+      }
+    </script>
+  </body>
 </html>
