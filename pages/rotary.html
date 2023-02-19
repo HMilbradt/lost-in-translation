@@ -11,6 +11,10 @@
         animation-iteration-count: infinite;
       }
 
+      .relative {
+        position: relative;
+      }
+
       @keyframes shake {
         0% {
           transform: translate(1px, 1px) rotate(0deg);
@@ -52,120 +56,121 @@
     <h1 style="color: white; text-align: center; font-family: DotGothic16">
       You're lost and in danger
     </h1>
-    <div style="text-align: center">
+    <div style="text-align: center" class="relative">
       <img src="./phone.png" style="width: 30%; text-align: center" />
+
+      <button
+        style="
+          background-color: red;
+          position: absolute;
+          top: 39%;
+          left: 44%;
+          opacity: 0;
+        "
+        id=" div1"
+        onclick="press(1)"
+      ></button>
+      <button
+        onclick="press(2)"
+        style="
+          background-color: red;
+          position: absolute;
+          top: 43%;
+          left: 47%;
+          opacity: 0;
+        "
+        id=" div2"
+      ></button>
+      <button
+        onclick="press(3)"
+        style="
+          background-color: red;
+          position: absolute;
+          top: 47%;
+          left: 49%;
+          opacity: 0;
+        "
+        id=" div3"
+      ></button>
+      <button
+        onclick="press(4)"
+        style="
+          background-color: red;
+          position: absolute;
+          top: 45%;
+          left: 43%;
+          opacity: 0;
+        "
+        id=" div3"
+      ></button>
+      <button
+        onclick="press(5)"
+        style="
+          background-color: red;
+          position: absolute;
+          top: 50%;
+          left: 45%;
+          opacity: 0;
+        "
+        id=" div3"
+      ></button>
+      <button
+        onclick="press(6)"
+        style="
+          background-color: red;
+          position: absolute;
+          top: 54%;
+          left: 48%;
+          opacity: 0;
+        "
+        id=" div3"
+      ></button>
+      <button
+        onclick="press(7)"
+        style="
+          background-color: red;
+          position: absolute;
+          top: 51%;
+          left: 42%;
+          opacity: 0;
+        "
+        id=" div3"
+      ></button>
+      <button
+        onclick="press(8)"
+        style="
+          background-color: red;
+          position: absolute;
+          top: 56%;
+          left: 44%;
+          opacity: 0;
+        "
+        id=" div3"
+      ></button>
+      <button
+        onclick="press(9)"
+        style="
+          background-color: red;
+          position: absolute;
+          top: 60%;
+          left: 47%;
+          opacity: 0;
+        "
+        id=" div3"
+      ></button>
+      <button
+        onclick="press(0)"
+        style="
+          background-color: red;
+          position: absolute;
+          top: 62%;
+          left: 43%;
+          opacity: 0;
+        "
+        id=" div3"
+      ></button>
     </div>
 
-    <button
-      style="
-        background-color: red;
-        position: absolute;
-        top: 40%;
-        left: 44%;
-        opacity: 0;
-      "
-      id=" div1"
-      onclick="press(1)"
-    ></button>
-    <button
-      onclick="press(2)"
-      style="
-        background-color: red;
-        position: absolute;
-        top: 42%;
-        left: 47%;
-        opacity: 0;
-      "
-      id=" div2"
-    ></button>
-    <button
-      onclick="press(3)"
-      style="
-        background-color: red;
-        position: absolute;
-        top: 44%;
-        left: 50%;
-        opacity: 0;
-      "
-      id=" div3"
-    ></button>
-    <button
-      onclick="press(4)"
-      style="
-        background-color: red;
-        position: absolute;
-        top: 43%;
-        left: 43%;
-        opacity: 0;
-      "
-      id=" div3"
-    ></button>
-    <button
-      onclick="press(5)"
-      style="
-        background-color: red;
-        position: absolute;
-        top: 46%;
-        left: 46%;
-        opacity: 0;
-      "
-      id=" div3"
-    ></button>
-    <button
-      onclick="press(6)"
-      style="
-        background-color: red;
-        position: absolute;
-        top: 48%;
-        left: 48%;
-        opacity: 0;
-      "
-      id=" div3"
-    ></button>
-    <button
-      onclick="press(7)"
-      style="
-        background-color: red;
-        position: absolute;
-        top: 47%;
-        left: 42%;
-        opacity: 0;
-      "
-      id=" div3"
-    ></button>
-    <button
-      onclick="press(8)"
-      style="
-        background-color: red;
-        position: absolute;
-        top: 49%;
-        left: 45%;
-        opacity: 0;
-      "
-      id=" div3"
-    ></button>
-    <button
-      onclick="press(9)"
-      style="
-        background-color: red;
-        position: absolute;
-        top: 51%;
-        left: 47%;
-        opacity: 0;
-      "
-      id=" div3"
-    ></button>
-    <button
-      onclick="press(0)"
-      style="
-        background-color: red;
-        position: absolute;
-        top: 52%;
-        left: 44%;
-        opacity: 0;
-      "
-      id=" div3"
-    ></button>
     <p
       id="output"
       style="color: white; text-align: center; font-family: DotGothic16"
