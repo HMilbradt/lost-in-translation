@@ -7,6 +7,12 @@
     <title>Lost in Translation</title>
     <link rel="stylesheet" href="../style.css" />
   </head>
+  <style>
+    a {
+      display: flex;
+      justify-content: center;
+    }
+  </style>
 
   <body>
     <h1 style="text-align: center">The Past Dictates Our Future</h1>
@@ -34,6 +40,7 @@
     </div>
 
     <p id="output" , style="text-align: center"></p>
+    <a class="falsetoken" href="./end.html"></a>
     <script>
       const input = document.querySelector("#guess");
       const map1 = new Map();
@@ -82,6 +89,7 @@
 
       function display() {
         const log = document.getElementById("output");
+        const falsetokenLink = document.querySelector(".falsetoken");
         var guessarr = Array.from(input.value);
         for (let i = 0; i < guessarr.length; i++) {
           guessarr[i] = map1.get(guessarr[i].toLowerCase());
@@ -90,8 +98,13 @@
         for (let i = 0; i < guessarr.length; i++) {
           str = str + guessarr[i];
         }
-
-        log.innerHTML = str;
+        if (str !== "falsetoken") {
+          log.innerText = str;
+          falsetokenLink.innerText = "";
+        } else {
+          log.innerText = "";
+          falsetokenLink.innerText = "falsetoken";
+        }
       }
     </script>
   </body>
