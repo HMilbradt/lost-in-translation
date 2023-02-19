@@ -69,7 +69,7 @@ button:hover {
   color: #000000;
 }
 
-p {
+p.content {
   font-size: 1.5rem;
 }
 
