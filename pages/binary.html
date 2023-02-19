@@ -147,8 +147,8 @@
       // });
       function two() {
         if (
-          arrayOfBools[3] == true ||
-          arrayOfBools[2] == true ||
+          arrayOfBools[3] == true &&
+          arrayOfBools[2] == true &&
           arrayOfBools[1] == true
         ) {
           arrayOfBools[0] = true;
@@ -158,7 +158,7 @@
         console.log(arrayOfBools);
       }
       function four() {
-        if (arrayOfBools[3] == true || arrayOfBools[2] == true) {
+        if (arrayOfBools[3] == true && arrayOfBools[2] == true) {
           arrayOfBools[1] = true;
         }
         console.log(arrayOfBools);
