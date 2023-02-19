@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../style.css" />
+    <title>Feast Your I's</title>
+  </head>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    .top {
+      display: flex;
+    }
+
+    .equations {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      font-size: 1.2rem;
+    }
+
+    .left {
+      display: flex;
+    }
+
+    .equation {
+      display: flex;
+      width: 70px;
+      flex-direction: column;
+      align-items: center;
+      border-bottom: 2px solid white;
+    }
+
+    .bottom {
+      display: flex;
+      text-align: center;
+    }
+
+    .answer {
+      width: 70px;
+    }
+
+    .error {
+      border: 2px solid red;
+    }
+
+    .correct {
+      border: 2px solid green;
+    }
+
+    .input-bar {
+      text-align: center;
+      margin-top: 50px;
+    }
+  </style>
+  <body>
+    <header>
+      <h1>Feast Your I's</h1>
+    </header>
+    <div class="equations">
+      <div class="top">
+        <div class="equation"></div>
+        <div class="equation"></div>
+        <div class="equation"></div>
+        <div class="equation" style="border: 2px solid white">
+          <p>XXI</p>
+          <p>-</p>
+          <p>VIII</p>
+          <p>=</p>
+        </div>
+        <div class="equation">
+          <p>XV</p>
+          <p>+</p>
+          <p>VII</p>
+          <p>=</p>
+        </div>
+        <div class="equation"></div>
+        <div class="equation">
+          <p>IX</p>
+          <p>+</p>
+          <p>XIX</p>
+          <p>=</p>
+        </div>
+        <div class="equation" style="border: 2px solid white">
+          <p>XXVI</p>
+          <p>-</p>
+          <p>XIV</p>
+          <p>=</p>
+        </div>
+        <div class="equation"></div>
+        <div class="equation"></div>
+        <div class="equation" style="border: 2px solid white">
+          <p>XVII</p>
+          <p>+</p>
+          <p>IV</p>
+          <p>=</p>
+        </div>
+      </div>
+      <div class="bottom">
+        <div class="answer">R</div>
+        <div class="answer">A</div>
+        <div class="answer">M</div>
+        <div class="answer">?</div>
+        <div class="answer">2</div>
+        <div class="answer">S</div>
+        <div class="answer">3</div>
+        <div class="answer">?</div>
+        <div class="answer"></div>
+        <div class="answer">I</div>
+        <div class="answer">?</div>
+      </div>
+    </div>
+
+    <div class="input-bar">
+      <input type="text" class="answer-input" />
+      <button class="submit">?</button>
+    </div>
+
+    <script>
+      const answerInput = document.querySelector(".answer-input");
+      const submitButton = document.querySelector(".submit");
+      const popup = document.querySelector(".popup");
+
+      answerInput.addEventListener("keyup", enterKeySubmit);
+      submitButton.addEventListener("click", submitInput);
+
+      function submitInput() {
+        if (answerInput.value.toLowerCase() === "ramesses ii") {
+          answerInput.classList.add("correct");
+          answerInput.classList.remove("error");
+        } else {
+          answerInput.classList.add("error");
+          answerInput.classList.remove("correct");
+        }
+      }
+
+      function enterKeySubmit(event) {
+        if (event.keyCode === 13) {
+          event.preventDefault();
+          submitInput();
+        }
+      }
+
+      function resetAnswerInputOutlines() {
+        answerInput.classList.remove("correct");
+        answerInput.classList.remove("error");
+      }
+    </script>
+  </body>
+</html>
